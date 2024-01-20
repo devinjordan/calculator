@@ -14,12 +14,7 @@ const divide = function(first, second) {
   if (second == 0) {
     return undefined;
   }
-  const result = first / second;
-  const remainder = first % second;
-  if (remainder >= second / 2) {
-    result++;
-  }
-  return result;
+  return first / second;
 }
 
 const operate = function(first, operator, second) {
