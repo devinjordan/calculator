@@ -1,3 +1,6 @@
+const display = document.querySelector('.display');
+const numbers = document.querySelectorAll('.number');
+
 const add = function(first, second) {
   return first + second;
 }
@@ -27,5 +30,17 @@ const operate = function(first, operator, second) {
       return multiply(first, second);
     case 'divide':
       return divide(first, second);
+    default:
+      return 0;
   }
 }
+
+numbers.forEach(function (number) {
+  number.onclick = function () {
+    if (display.textContent == 0) {
+      display.textContent = number.textContent;
+      return;
+    }
+    display.append(number.textContent);
+  }
+});
