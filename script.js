@@ -1,5 +1,10 @@
 const display = document.querySelector('.display');
 const numbers = document.querySelectorAll('.number');
+const operators = document.querySelectorAll('.operator');
+const evaluate = document.querySelector('#equals');
+let selectedOperation = '';
+let var1 = 0;
+let var2 = 0;
 
 const add = function(first, second) {
   return first + second;
@@ -21,6 +26,7 @@ const divide = function(first, second) {
 }
 
 const operate = function(first, operator, second) {
+  operator = selectedOperation;
   switch(operator) {
     case 'add':
       return add(first, second);
@@ -44,3 +50,19 @@ numbers.forEach(function (number) {
     display.append(number.textContent);
   }
 });
+
+operators.forEach(function (operator) {
+  operator.onclick = function () {
+    if (selectedOperation == '') {
+      var1 = display.textContent;
+      display.textContent = 0;
+      selectedOperation = operator.id;
+    } else {
+      selectedOperation = operator.id;
+    }
+  }
+});
+
+evaluate.addEventListener('click', () => {
+  display.textContent = operate(var1, selectedOperation, var2);
+})
