@@ -41,33 +41,6 @@ const operate = function(first, operator, second) {
   }
 }
 
-numbers.forEach(function (number) {
-  number.onclick = function () {
-    if (display.textContent == 0) {
-      display.textContent = number.textContent;
-      return;
-    }
-    display.append(number.textContent);
-  }
-});
-
-operators.forEach(function (operator) {
-  operator.onclick = function () {
-    if (selectedOperation == '') {
-      var1 = display.textContent;
-      display.textContent = 0;
-      selectedOperation = operator.id;
-    } else {
-      selectedOperation = operator.id;
-    }
-  }
-});
-
-evaluate.addEventListener('click', () => {
-  var2 = display.textContent;
-  display.textContent = operate(var1, selectedOperation, var2);
-});
-
 // numbers.forEach(function (number) {
 //   number.addEventListener('keyup', {
 
