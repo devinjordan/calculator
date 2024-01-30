@@ -3,6 +3,7 @@ const numbers = document.querySelectorAll('.number');
 const operators = document.querySelectorAll('.operator');
 const evaluate = document.querySelector('#equals');
 let selectedOperation = '';
+let resultDisplayed = false;
 let var1 = 0;
 let var2 = 0;
 
@@ -46,3 +47,18 @@ const operate = function(first, operator, second) {
 
 //   })
 // })
+
+numbers.forEach(function (number) {
+  number.addEventListener('click', () => {
+    if (display.textContent == 0) {
+      display.textContent = number.textContent;
+    } else if (resultDisplayed) {
+      display.textContent = number.textContent;
+      resultDisplayed = false;
+    } else {
+      if (length(display.textContent) < 10) {
+        display.append(number.textContent);
+      }
+    }
+  })
+})
