@@ -1,20 +1,48 @@
 body {
+  display: flex;
   background-color: black;
   font-family: monospace;
   font-size: xx-large;
-  display: flex;
   justify-content: center;
   padding: 1vw;
 }
 
 .calculator {
+  display: flex;
+  flex-direction: column;
   background-color: rgb(41, 41, 41);
   padding: 2vw;
+  flex-grow: 1;
+  max-width: 15vw;
+  min-height: 30vw;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  min-width: 8vw;
+  flex-grow: 1;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.number {
+  flex-grow: 1;
+  max-width: 3vw;
+  margin: 0.5vw;
 }
 
 button {
   color: greenyellow;
   background-color: black;
+  flex-grow: 1;
+  max-width: 3vw;
+  margin: 0.5vw;
 }
 
 .display {
@@ -23,4 +51,13 @@ button {
   background-color: rgb(183, 208, 146);
   justify-content: right;
   padding-right: 0.5vw;
+  margin-bottom: 0.5vw;
+  flex-grow: 1;
+  max-height: 2vw;
+  align-items: center;
+}
+
+#equals {
+  flex-grow: 1;
+  max-width: 8vw;
 }

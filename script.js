@@ -64,5 +64,12 @@ operators.forEach(function (operator) {
 });
 
 evaluate.addEventListener('click', () => {
+  var2 = display.textContent;
   display.textContent = operate(var1, selectedOperation, var2);
-})
+});
+
+// numbers.forEach(function (number) {
+//   number.addEventListener('keyup', {
+
+//   })
+// })
